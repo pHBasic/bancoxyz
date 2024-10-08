@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-toolbar>{{ this.transactionType }}</mat-toolbar>
+
+  <mat-card-content>
+    <form [formGroup]="form" class="min-width">
+      <mat-form-field floatLabel="always" class="full-width">
+        <mat-label>Valor</mat-label>
+        <input
+          matInput
+          required
+          type="number"
+          class="right-align"
+          placeholder="0"
+          formControlName="transactionValue"
+        />
+        <span style="color: #ffffff" matTextPrefix>R$&nbsp;</span>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <textarea
+          maxlength="250"
+          matInput
+          placeholder="Escreva uma observação."
+          formControlName="obs"
+        ></textarea>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="this.transactionType === 'transfer'" class="full-width">
+        <mat-label>Id do alvo</mat-label>
+        <input matInput type="number" id="id" placeholder="0" formControlName="accountId" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      {{ 'Finalizar ' + this.transactionType }}
+    </button>
+    <button mat-button color="warn" (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>

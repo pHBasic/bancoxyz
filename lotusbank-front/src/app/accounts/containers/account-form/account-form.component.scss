@@ -1,0 +1,34 @@
+mat-card{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.min-width {
+  width: 100%;
+  min-width: 150px;
+}
+
+.mat-button-ripoff:hover{
+  background-color: #f443361a;
+}
+
+.right-align {
+  text-align: right;
+}
+
+input.right-align::-webkit-outer-spin-button,
+input.right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.right-align {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

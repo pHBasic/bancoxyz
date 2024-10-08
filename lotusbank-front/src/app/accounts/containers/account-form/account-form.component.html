@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-toolbar>Detalhes da conta</mat-toolbar>
+
+  <mat-card-content>
+    <form [formGroup]="form" class="min-width">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome do Cliente" formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Tipo de Conta" formControlName="accountType">
+          <mat-option value="Corrente">Corrente</mat-option>
+          <mat-option value="Poupança">Poupança</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always" class="full-width">
+        <mat-label>Saldo Incial</mat-label>
+        <input matInput type="number" class="right-align" placeholder="0" formControlName="balance" />
+        <span style="color:#FFFFFF" matTextPrefix>R$&nbsp;</span>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      Salvar
+    </button>
+    <button mat-button color="warn" (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>

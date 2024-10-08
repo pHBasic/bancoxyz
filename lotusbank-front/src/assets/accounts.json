@@ -1,0 +1,4 @@
+[
+  { "_id": 1, "name": "Pedro", "accountType": "Corrente"},
+  { "_id": 2, "name": "Renata", "accountType": "Poupança"}
+]
