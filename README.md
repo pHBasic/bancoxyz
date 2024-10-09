@@ -32,13 +32,19 @@ Este projeto é uma simulação do sistema de caixa de um banco, desenvolvido pa
 
 ## Configuração e Execução
 
-1. Antes de executar o Frontend, instale as dependências do projeto com o seguinte comando:
+1. Execute o comando
+
+```bash
+    cd lotusbank-front
+```
+
+2. Antes de executar o Frontend, instale as dependências do projeto com o seguinte comando:
 
 ```bash
     npm install
 ```
 
-2. Para executar o Frontend, utilize, no terminal, o comando:
+3. Para executar o Frontend, utilize, no terminal, o comando:
 
 ```bash
     npm run start
