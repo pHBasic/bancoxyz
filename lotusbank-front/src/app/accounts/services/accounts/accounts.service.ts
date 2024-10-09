@@ -19,8 +19,22 @@ export class AccountsService {
     );
   }
 
+  listTransaction(id: string) {
+    return this.httpClient.get<Transaction[]>(`${this.API}/${id}`).pipe(
+      first(),
+    );
+  }
+
   loadById(id: string){
     return this.httpClient.get<Account>(`${this.API}/${id}`);
+  }
+
+  // deposit(record: Partial<Transaction>, id: string){
+  //   return this.httpClient.put<Transaction>(`${this.API}/deposit/${id}`, record).pipe(first());
+  // }
+
+  deposit(value: number, id: string){
+    return this.httpClient.put(`${this.API}/deposit/${id}`, value).pipe(first())
   }
 
   save(record: Partial<Account>) {
@@ -30,16 +44,12 @@ export class AccountsService {
     return this.create(record);
   }
 
-  // deposit(record: Partial<Transaction>){
-  //   return this.httpClient.post<Transaction>(`${this.API}/deposit/${record.accountId}`, record).pipe(first());
-  // }
-
   private create(record: Partial<Account>){
     return this.httpClient.post<Account>(this.API, record).pipe(first());
   }
 
   private update(record: Partial<Account>){
-    return this.httpClient.put<Account>(`${this.API}/deposit/${record._id}`, record).pipe(first());
+    return this.httpClient.put<Account>(`${this.API}/${record._id}`, record).pipe(first());
   }
 
   delete(id: string){

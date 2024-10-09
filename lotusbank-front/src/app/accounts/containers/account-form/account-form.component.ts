@@ -24,6 +24,7 @@ export class AccountFormComponent implements OnInit {
   form = this.formBuilder.group({
     _id: [''],
     name: [''],
+    cpf: [''],
     accountType: [''],
     balance: [0],
   });
@@ -41,6 +42,7 @@ export class AccountFormComponent implements OnInit {
     this.form.setValue({
       _id: account._id,
       name: account.name,
+      cpf: account.cpf,
       accountType: account.accountType,
       balance: account.balance,
     });

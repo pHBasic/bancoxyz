@@ -18,6 +18,6 @@ export class AccountResolver {
     if (route.params && route.params['id']) {
       return this.service.loadById(route.params['id']);
     }
-    return of({ _id: '', name: '', accountType: '', balance: 0, transaction: null });
+    return of({ _id: '', name: '', cpf: '', accountType: '', balance: 0 });
   }
 }

@@ -1,3 +1,4 @@
+import { Account } from './../model/account';
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,8 +11,9 @@ import {
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AccountsService } from '../services/accounts/accounts.service';
 import { Location } from '@angular/common';
-import { Account } from '../model/account';
+// import { Account } from '../model/account';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-deposit-form',
@@ -25,8 +27,6 @@ export class DepositFormComponent implements OnInit {
 
   form = this.formBuilder.group({
     transactionValue: [0],
-    obs: [''],
-    accountId: [null],
   });
 
   constructor(
@@ -34,31 +34,27 @@ export class DepositFormComponent implements OnInit {
     private readonly service: AccountsService,
     private readonly snackBar: MatSnackBar,
     private readonly location: Location,
-    private readonly route: ActivatedRoute
+    private readonly route: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
-    const account: Account = this.route.snapshot.data['account'];
-    this
+
   }
 
-  getTransactionType(transactionType: string){
-    switch(transactionType){
-      case 'transfer':
-        this.transactionType = 'Transferência';
-        break;
-      case 'deposit':
-        this.transactionType = 'Depósito';
-        break;
-      case 'withdrawal':
-        this.transactionType = 'Saque';
-        break;
-    }
-  }
+  // onSubmit() {
+  //   const account: Account = this.route.snapshot.data['account'];
+  //   this.service.deposit(this.form.value, account._id).subscribe(
+  //     () => this.onSuccess(),
+  //     () => this.onError()
+  //   );
+  // }
 
   onSubmit() {
-    // this.service.deposit(this.form.value)
-    this.onSuccess();
+    const account: Account = this.route.snapshot.data['account'];
+    this.service.deposit(100.0, account._id).subscribe(
+      () => this.onSuccess(),
+      () => this.onError()
+    );
   }
 
   onCancel() {

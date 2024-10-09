@@ -14,29 +14,26 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class Transaction {
+public class Operation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "operation", nullable = false)
-    private String operation;
+    @Column(nullable = false)
+    private String operationType;
     
-    @Column(name = "dateTimeOperation", nullable = false)
-    private LocalDateTime dateTimeOperation;
+    // @Column(nullable = false)
+    private LocalDateTime timestamp;
 
-    @Column(name = "observation", nullable = false)
+    @Column(nullable = false)
     private String observation;
 
-    @Column(name = "value", nullable = false)
-    private Float value;
-
-    @Column(name = "description", nullable = false)
-    private String description;
+    @Column(nullable = false)
+    private Double operationValue;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "account_id")
-    private Account account;
+    @JoinColumn(name = "accountId")
+    private Account accountId;
 
 }

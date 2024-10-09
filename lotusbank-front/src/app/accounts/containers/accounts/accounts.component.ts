@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Account } from '../../model/account';
 import { CommonModule } from '@angular/common';
 
-import { AccountsService } from '../../services/accounts.service';
+import { AccountsService } from '../../services/accounts/accounts.service';
 import { catchError, delay, first, Observable, tap, of } from 'rxjs';
 import { AppMaterialModule } from '../../../shared/app-material/app-material.module';
 import { MatDialog } from '@angular/material/dialog';

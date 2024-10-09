@@ -4,6 +4,7 @@ import { AccountsComponent } from './containers/accounts/accounts.component';
 import { AccountFormComponent } from './containers/account-form/account-form.component';
 import { AccountResolver } from './guards/account.resolver';
 import { DepositFormComponent } from './deposit-form/deposit-form.component';
+import { TransactionsComponent } from './containers/transactions/transactions.component';
 
 const routes: Routes = [
   { path: '', component: AccountsComponent },
@@ -22,6 +23,11 @@ const routes: Routes = [
     component: DepositFormComponent,
     resolve: { account: AccountResolver },
   },
+  {
+    path: ':id/transctions',
+    component: TransactionsComponent,
+    resolve: { account: AccountResolver },
+  }
 ];
 
 @NgModule({
