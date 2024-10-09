@@ -46,7 +46,7 @@ public class AccountController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("{id}/transactions")
+    @GetMapping("transactions/{id}")
     public List<Operation> findOperationById(@PathVariable Long id) {
         return accountRepository.findById(id).get().getOperations();
     }

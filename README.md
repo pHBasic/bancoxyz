@@ -32,16 +32,6 @@ Este projeto é uma simulação do sistema de caixa de um banco, desenvolvido pa
 
 ## Configuração e Execução
 
-### Backend
-
-1. Para executar o Backend, utilize,:
-
-```bash
-    mvn spring-boot:run
-```
-
-### Frontend
-
 1. Antes de executar o Frontend, instale as dependências do projeto com o seguinte comando:
 
 ```bash
@@ -53,3 +43,11 @@ Este projeto é uma simulação do sistema de caixa de um banco, desenvolvido pa
 ```bash
     npm run start
 ```
+
+### API Endpoints
+
+- POST api/accounts: Cria uma nova conta.
+- PUT /api/accounts/deposit/{id}: Realiza um depósito em uma conta.
+- PUT /api/accounts/withdraw/{id}: Realiza um saque de uma conta.
+- PUT /api/accounts/transfer/{id}: Transfere fundos entre contas.
+- GET /accounts/transactions/{id}: Exibe o extrato de uma conta.
