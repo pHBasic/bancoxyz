@@ -1,4 +1,4 @@
-# Sistema de Caixa do Banco XYZ (Incompleto)
+# Sistema de Caixa do Banco XYZ
 
 Este projeto é uma simulação do sistema de caixa de um banco, desenvolvido para um desafio técnico. A aplicação permite operações bancárias como cadastro de contas, depósitos, saques, transferências entre contas e geração de extratos. O backend foi construído utilizando Java (Spring Boot), enquanto o frontend foi desenvolvido com Angular.
 
